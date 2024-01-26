@@ -1,0 +1,197 @@
+<!-- start banner -->
+<div class="container mx-auto">
+  <p-carousel
+    [value]="bannerResult"
+    [numVisible]="1"
+    [numScroll]="1"
+    [autoplayInterval]="3000"
+    [circular]="true"
+    styleClass="full-width-carousel"
+  >
+    <ng-template pTemplate="item" let-b>
+      <div class="carousel-item">
+        <!-- Your slide content here -->
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}"
+          alt=""
+        />
+        <div
+          class="absolute bottom-0 left-0 right-0 p-4 bg-[#00000080] text-white text-center"
+        >
+          <h3 class="text-2xl mb-2 text-red-600 font-bold">
+            {{ b.original_title }}
+          </h3>
+          <p class="text-base mb-0">{{ b.overview }}</p>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+<!-- end banner -->
+
+<div class="contain mt-3 p-4">
+  <!-- start trendingMovies -->
+  <div class="flex flex-wrap">
+    <h5 class="text-white">Trending Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let t of trendingMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', t.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start actionMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Action Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let a of actionMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ a.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', a.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start adventureMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Adventure Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let a of adventureMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ a.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', a.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start animationMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Animation Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let a of animationMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ a.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', a.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start comedyMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Comedy Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let c of comedyMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ c.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', c.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start documentaryMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Documentary Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let d of documentaryMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ d.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', d.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start ScienceFectionMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">ScienceFection Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let s of ScienceFectionMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', s.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start ThrillerMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Thriller Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let t of ThrillerMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', t.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start crimeMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Crime Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let c of CrimeMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ c.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', c.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start DramaMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Drama Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let d of DramaMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ d.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', d.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- start FamilyMovies -->
+  <div class="flex flex-wrap mt-4">
+    <h5 class="text-white">Family Movies</h5>
+    <div class="flex overflow-y-hidden overflow-x-scroll scrollbar mt-3 p-2">
+      <ng-container *ngFor="let f of FamilyMoveResult">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ f.poster_path }}"
+          alt=""
+          class="img max-h-72 object-contain box-content mr-2"
+          [routerLink]="['/movedetails', f.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+.full-width-carousel {
+  //width: 100%;
+  position: relative;
+}
+:host ::ng-deep .p-carousel-item {
+    position: relative;
+    // display: none;
+    width: 100%;
+    height: auto;
+}
+
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.15s ease-in-out;
+}
+:host ::ng-deep  .p-carousel .p-carousel-content .p-carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.15s ease-in-out;
+}
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-next {
+    right: 1rem;
+}
+
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+    left : 1rem;
+}
+:host ::ng-deep .p-carousel .p-carousel-indicators{
+    display: none;
+}
+.img{
+    width: 100%;
+    transition: transform 450ms;
+}
+.img:hover {
+    transform: scale(1.09);
+    cursor: pointer;
+}
+.scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
